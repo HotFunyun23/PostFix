@@ -1,12 +1,4 @@
 
-/**
- * Node
- * Author: Conor Schaden
- * Collaborator(s): August
- * Collaboration: helped fix
- * Date: Date the program is handed in: 12/14/21
- **/
-
 public class Node<T> {
 
     private T val; //data stored
