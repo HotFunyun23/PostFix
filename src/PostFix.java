@@ -1,5 +1,13 @@
-public class PostFix {
+/**
+ * Postfix.java
+ * calculates in postfix notation
+ * Author: Conor Schaden
+ * Collaborator(s): August
+ * Collaboration: helped fix, his was prettier
+ * Date: Date the program is handed in 12/14/2021
+ **/
 
+public class PostFix {
 
     //instance data
     Stack s;
@@ -27,6 +35,35 @@ public class PostFix {
         }
         System.out.println();
         s=prob;
+    }
+
+    public Integer calculate(){
+        //calculates based on input
+        for(int i = 0; i < input.length(); i++){
+            if(input.charAt(i) == '+' || input.charAt(i) == '-' || input.charAt(i) == '/' || input.charAt(i) == '*'){
+                int value1 = (int)s.pop();
+                int value2 = (int)s.pop();
+                if(input.charAt(i) == '+'){
+                    s.push(value2 + value1);
+                }if(input.charAt(i) == '-'){
+                    s.push(value2 - value1);
+                }if(input.charAt(i) == '/'){
+                    s.push(value2 / value1);
+                }if(input.charAt(i) == '*'){
+                    s.push(value2 * value1);
+                }
+
+            }else if(input.charAt(i) != ' '){
+                int intPush = ((int)input.charAt(i))-48;
+                while(input.charAt(i+1) != ' '){
+                    i++;
+                    intPush *= 10;
+                    intPush += ((int)input.charAt(i))-48;
+                }
+                s.push(intPush);
+            }
+        }
+        return (Integer)s.pop();
     }
 
 
