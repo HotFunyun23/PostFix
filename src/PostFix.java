@@ -1,4 +1,11 @@
 
+/** Postfix.java
+        * calculates problems in postfix notation
+        * Author: Conor Schaden
+        * Collaborator(s): August/mareks
+        * Collaboration: helped fix, his was prettier, helped understand
+        * Date: Date the program is handed in 12/14/2021
+        **/
 public class PostFix {
 
     //instance data
